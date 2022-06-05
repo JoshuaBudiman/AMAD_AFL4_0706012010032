@@ -15,6 +15,7 @@
 		3EBE05FE2844C50800C44E7E /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE05FD2844C50800C44E7E /* AddItemView.swift */; };
 		3EBE06012844CDF000C44E7E /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE06002844CDF000C44E7E /* TaskModel.swift */; };
 		3EBE06042844D35000C44E7E /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE06032844D35000C44E7E /* TodoViewModel.swift */; };
+		3EF2714E284CFEBB00E19153 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2714D284CFEBB00E19153 /* EmptyListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3EBE05FD2844C50800C44E7E /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		3EBE06002844CDF000C44E7E /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		3EBE06032844D35000C44E7E /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		3EF2714D284CFEBB00E19153 /* EmptyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				3EBE05F92844C11D00C44E7E /* TodoView.swift */,
 				3EBE05FB2844C2B700C44E7E /* RowView.swift */,
 				3EBE05FD2844C50800C44E7E /* AddItemView.swift */,
+				3EF2714D284CFEBB00E19153 /* EmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				3EBE06042844D35000C44E7E /* TodoViewModel.swift in Sources */,
 				3EBE05FA2844C11D00C44E7E /* TodoView.swift in Sources */,
+				3EF2714E284CFEBB00E19153 /* EmptyListView.swift in Sources */,
 				3EBE05FC2844C2B700C44E7E /* RowView.swift in Sources */,
 				3EBE06012844CDF000C44E7E /* TaskModel.swift in Sources */,
 				3EBE05E92844C00100C44E7E /* AFL4_Joshua_Kouwa_Budiman_0706012010032App.swift in Sources */,

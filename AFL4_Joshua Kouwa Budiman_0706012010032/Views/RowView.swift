@@ -16,6 +16,7 @@ struct RowView: View {
             Image(systemName: item.isDone ? "checkmark.circle": "circle")
                 .foregroundColor(item.isDone ? .green : .red)
             Text(item.title)
+                .strikethrough(item.isDone ? true : false)
             Spacer()
         }
         .font(.title2)

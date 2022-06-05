@@ -9,18 +9,24 @@ import Foundation
 
 class TodoViewModel: ObservableObject {
     
-    @Published var items: [TaskModel] = []
+    @Published var items: [TaskModel] = [] {
+        didSet {
+            saveItems()
+        }
+    }
+    let itemsKey : String = "items_list"
     
     init(){
         getItems()
     }
     
     func getItems(){
-        let newItems = [
-            TaskModel(title: "This is the first task", isDone: false),
-            TaskModel(title: "This is the second!", isDone: true),
-            TaskModel(title: "Third", isDone: false)]
-        items.append(contentsOf: newItems)
+        guard
+            let data = UserDefaults.standard.data(forKey: itemsKey),
+            let savedItems = try? JSONDecoder().decode([TaskModel].self, from: data)
+        else { return }
+        
+        self.items = savedItems
     }
     
     func deleteItem(indexSet: IndexSet){
@@ -38,6 +44,12 @@ class TodoViewModel: ObservableObject {
     func updateItem(item: TaskModel) {
         if let index = items.firstIndex(where: {$0.id == item.id}){
             items[index] = item.updateCompletion()
+        }
+    }
+    
+    func saveItems() {
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: itemsKey)
         }
     }
 }

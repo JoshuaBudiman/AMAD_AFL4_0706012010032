@@ -12,19 +12,28 @@ struct TodoView: View {
     
     
     var body: some View {
-        List{
-            ForEach(todoViewModel.items){item in
-                RowView(item: item)
-                    .onTapGesture {
-                        withAnimation(.linear){
-                            todoViewModel.updateItem(item: item)
-                        }
-                    }
-            }.onDelete(perform: todoViewModel.deleteItem)
-                .onMove(perform: todoViewModel.moveItem)
+        ZStack{
+            if todoViewModel.items.isEmpty {
+                EmptyListView()
+                    .transition(AnyTransition.opacity.animation(.easeIn))
+            }else {
+                List{
+                    ForEach(todoViewModel.items){item in
+                        RowView(item: item)
+                            .onTapGesture {
+                                withAnimation(.linear){
+                                    todoViewModel.updateItem(item: item)
+                                }
+                            }
+                    }.onDelete(perform: todoViewModel.deleteItem)
+                        .onMove(perform: todoViewModel.moveItem)
+                }
+                
+                .listStyle(PlainListStyle())
+            }
         }
         
-        .listStyle(PlainListStyle())
+        
         .navigationTitle("Prio List 📋")
         .navigationBarItems(leading: EditButton(), trailing: NavigationLink("Add", destination: AddItemView())
         )
