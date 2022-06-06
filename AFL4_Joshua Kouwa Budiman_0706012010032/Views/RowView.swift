@@ -13,21 +13,34 @@ struct RowView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: item.isDone ? "checkmark.circle": "circle")
-                .foregroundColor(item.isDone ? .green : .red)
-            Text(item.title)
-                .strikethrough(item.isDone ? true : false)
+            VStack {
+                HStack {
+                    Image(systemName: item.isDone ? "checkmark.circle": "circle")
+                        .foregroundColor(item.isDone ? .green : .red)
+                    Text(item.title)
+                        .strikethrough(item.isDone ? true : false)
+                    Spacer()
+                    
+                }
+                .font(.title2)
+                .padding(.vertical, 8)
+                HStack {
+                    Text("Deadline: \(item.date)" )
+                        .strikethrough(item.isDone ? true : false)
+                    Spacer()
+                }
+                .font(.title3)
+                .padding(.vertical, 8)
+            }
             Spacer()
         }
-        .font(.title2)
-        .padding(.vertical, 8)
     }
 }
 
 struct RowView_Previews: PreviewProvider {
     
-    static var item1 = TaskModel(title: "First Item", isDone: false)
-    static var item2 = TaskModel(title: "Second Item", isDone: true)
+    static var item1 = TaskModel(title: "First Item", isDone: false, date: "Jun 6, 2022, 1:26 PM")
+    static var item2 = TaskModel(title: "Second Item", isDone: true, date: "Jun 6,2022, 1:30 PM")
     
     static var previews: some View {
         Group{
