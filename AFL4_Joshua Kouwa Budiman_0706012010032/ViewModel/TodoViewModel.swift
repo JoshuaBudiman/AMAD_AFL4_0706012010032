@@ -35,7 +35,7 @@ class TodoViewModel: ObservableObject {
     func moveItem(from: IndexSet, to : Int){
         items.move(fromOffsets: from, toOffset: to)
     }
-
+    
     func addItem(title: String, date: String) {
         let newItem = TaskModel(title: title, isDone: false, date: date)
         items.append(newItem)

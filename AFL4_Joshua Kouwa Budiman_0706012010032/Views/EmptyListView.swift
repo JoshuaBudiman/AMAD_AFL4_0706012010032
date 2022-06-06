@@ -18,7 +18,7 @@ struct EmptyListView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 Text("Are you a busy person and need to keep track of what tasks you should be doing? Click on the add button and start listing your tasks!")
-                    
+                
             }
             .multilineTextAlignment(.center)
             .padding(15)
@@ -40,8 +40,8 @@ struct EmptyListView: View {
         DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
             withAnimation(
                 Animation
-                .easeInOut(duration: 2.0)
-                .repeatForever()
+                    .easeInOut(duration: 2.0)
+                    .repeatForever()
             ){
                 animate.toggle()
             }
